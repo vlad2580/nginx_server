@@ -4,9 +4,6 @@
 #---------------------------------------------------#
 
 provider "aws" {
-  access_key = "AKIARB77TLWIN5K4AGSK"
-  secret_key = "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"
-  region     = "eu-central-1"
 }
 
 
@@ -32,7 +29,7 @@ data "aws_ami" "ubuntu" {
 #---------------------------------------------------#
 
 resource "aws_security_group" "webserver" {
-  name = "Dinamic-Security-Nginx-Group-Main"
+  name = "Dinamic-Security-Nginx-Grsoup-Main2321"
 
   dynamic "ingress" {
     for_each = ["80", "443", "1234"]
@@ -71,10 +68,10 @@ resource "aws_security_group" "webserver" {
 resource "aws_instance" "nginx_instance" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  key_name      = "vlad-key-frankfurt"
+  key_name = "vlad-key-frankfurt"
   tags = {
 
-    Name = "11ngnix_instance_1.0.0"
+    Name = "AuthUser_instance_1.0.0"
   }
   user_data       = file("user_data.sh")
   security_groups = [aws_security_group.webserver.name]
@@ -106,7 +103,7 @@ resource "null_resource" "check_machine" {
       type        = "ssh"
       user        = "ubuntu"
       host        = aws_instance.nginx_instance.public_ip
-      private_key = file("vlad-key-frankfurt.pem")
+      private_key = file("aws-key.pem")
     }
   }
 }
@@ -125,7 +122,7 @@ resource "null_resource" "pyScripts" {
     type        = "ssh"
     user        = "ubuntu"
     host        = aws_instance.nginx_instance.public_ip
-    private_key = file("vlad-key-frankfurt.pem")
+    private_key = file("aws-key.pem")
   }
 }
 
@@ -145,7 +142,7 @@ resource "null_resource" "webApp" {
     type        = "ssh"
     user        = "ubuntu"
     host        = aws_instance.nginx_instance.public_ip
-    private_key = file("vlad-key-frankfurt.pem")
+    private_key = file("aws-key.pem")
   }
 }
 

@@ -1,31 +1,31 @@
 #!/bin/bash
 
-# Запрос данных AWS у пользователя
-read -p "Введите AWS Access Key ID: " access_key
-read -p "Введите AWS Secret Access Key: " secret_key
-read -p "Введите AWS регион: " region
+# Prompt the user for AWS credentials
+read -p "Enter AWS Access Key ID: " access_key
+read -p "Enter AWS Secret Access Key: " secret_key
+read -p "Enter AWS region: " region
 
-# Устанавливаем полученные данные как переменные окружения
+# Set the obtained data as environment variables
 export AWS_ACCESS_KEY_ID="$access_key"
 export AWS_SECRET_ACCESS_KEY="$secret_key"
 export AWS_DEFAULT_REGION="$region"
 
-# Переход в директорию с файлом test.tf
+# Change to the directory with the test.tf file
 cd /root/terraform
 
-# Инициализация Terraform
+# Initialize Terraform
 terraform init
 
-# Применение конфигурации Terraform
+# Apply Terraform configuration
 terraform apply -auto-approve
 
-# Запуск других команд, если необходимо
-# Например, выполнение других скриптов
+# Run other commands if needed
+# For example, execute other scripts
 
-# Ваш код для выполнения других команд
+# Your code to run other commands
 
-# Сообщение о завершении работы
-echo "Работа завершена"
+# Display completion message
+echo "Work completed"
 
-# Завершение работы контейнера
+# Exit the container
 exit 0

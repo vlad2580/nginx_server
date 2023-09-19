@@ -11,7 +11,7 @@ RUN wget https://releases.hashicorp.com/terraform/0.15.5/terraform_0.15.5_linux_
     mv terraform /usr/local/bin/ && \
     rm terraform_0.15.5_linux_amd64.zip
 
-# Copy the test.tf file into the container
+# Copy files to conainer
 COPY /terraform/main.tf /root/terraform/main.tf
 
 COPY /python/add_admin.py /root/python/add_admin.py
@@ -22,7 +22,7 @@ COPY /web/index.html /root/web/index.html
 COPY /web/admin.html /root/web/admin.html
 
 COPY /terraform/user_data.sh /root/terraform/user_data.sh
-COPY /terraform/vlad-key-frankfurt.pem /root/terraform/vlad-key-frankfurt.pem
+COPY /terraform/aws-key.pem /root/terraform/aws-key.pem
 
 # Copy entrypoint.sh into the container
 COPY entrypoint.sh /root/entrypoint.sh
