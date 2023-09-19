@@ -88,7 +88,9 @@ output "instance_public_ip" {
   value = aws_instance.nginx_instance.public_ip
 }
 
-
+#---------------------------------------------------#
+# Connection check                                  #
+#---------------------------------------------------#
 
 resource "null_resource" "check_machine" {
   triggers = {
@@ -109,6 +111,9 @@ resource "null_resource" "check_machine" {
   }
 }
 
+#---------------------------------------------------#
+# Upload Python Scripts                             #
+#---------------------------------------------------#
 
 resource "null_resource" "pyScripts" {
   provisioner "file" {
@@ -124,6 +129,11 @@ resource "null_resource" "pyScripts" {
   }
 }
 
+
+
+#---------------------------------------------------#
+# Upload web files                                  #
+#---------------------------------------------------#
 
 resource "null_resource" "webApp" {
   provisioner "file" {
