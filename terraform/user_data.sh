@@ -50,6 +50,6 @@ sudo python3 /home/ubuntu/scripts/ssl_script.py
 sudo python3 /home/ubuntu/scripts/auth_admin.py 
 
 # Don't forget to clear DNS cache and restart Nginx
-sudo systemctl restart nginx
+sudo systemctl restart nginx 
 sudo systemctl restart systemd-resolved
 
