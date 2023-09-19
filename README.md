@@ -41,13 +41,23 @@ docker run -it terraform-container1
 3.An EC2 instance is provisioned, and files are transferred.
 
 ## Setting Up Nginx
-The HTTP port is changed to 1234.
-SSL port 443 is opened.
-SSL certificates are generated and configured.
-User Authentication
-Three users (admin, Vladislav, erik) are created.
-Passwords are hashed.
-localhost is replaced with www.mycomp.local, and the root folder for HTML is changed.
-Authentication Script
-The auth_admin.py script authenticates on https://www.mycomp.local/admin.
-The script saves the page content to a separate file.
+
+1.The HTTP port is changed to 1234.
+
+2.SSL port 443 is opened.
+
+3. SSL certificates are generated and configured.
+   
+## User Authentication
+
+1.Three users (admin, Vladislav, erik) are created.
+
+2.Passwords are hashed.
+
+3. localhost is replaced with www.mycomp.local, and the root folder for HTML is changed.
+   
+## Authentication Script
+
+1.The auth_admin.py script authenticates on https://www.mycomp.local/admin.
+
+2.The script saves the page content to a separate file.
