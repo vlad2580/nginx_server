@@ -32,11 +32,15 @@ docker run -it terraform-container1
 ```
 
 # Deployment Process
-Initialization and AWS Setup
-Terraform initializes and connects to your AWS account (for educational purposes).
-It creates and configures a security group.
-An EC2 instance is provisioned, and files are transferred.
-Setting Up Nginx
+## Initialization and AWS Setup
+
+1.Terraform initializes and connects to your AWS account (for educational purposes).
+
+2.It creates and configures a security group.
+
+3.An EC2 instance is provisioned, and files are transferred.
+
+## Setting Up Nginx
 The HTTP port is changed to 1234.
 SSL port 443 is opened.
 SSL certificates are generated and configured.
