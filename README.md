@@ -21,9 +21,9 @@ Before you begin, make sure you have the following installed:
 Build the Docker container:
 
    ```bash
-Copy code
-docker build -t terraform-container1 .
-Run the Docker container:
+   Copy code
+   docker build -t terraform-container1 .
+   Run the Docker container:
 
 bash
 docker run -it terraform-container1
