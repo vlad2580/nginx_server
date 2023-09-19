@@ -1,34 +1,31 @@
 import fileinput
 import os
 
-
+# Path to the Nginx configuration file
 nginx_config_file = "/etc/nginx/sites-available/default"
 
-# Создаем строку для добавления location /admin
-new_location_block = """
-        location /admin {
-                auth_basic "Restricted Access";
-                auth_basic_user_file /etc/nginx/.htpasswd;
-                alias /home/ubuntu/web;
-                index admin.html;
-        }
-"""
+# Paths to the SSL certificate and key
+certificate_path = "/etc/nginx/ssl/www.mycomp.local+4.pem"
+private_key_path = "/etc/nginx/ssl/www.mycomp.local+4-key.pem"
 
-# Читаем файл конфигурации и создаем временный файл
+# Read the configuration file and create a temporary file
 with fileinput.input(nginx_config_file, inplace=True, backup='.bak') as file:
-    add_location_admin = False
+    add_ssl_paths = False
     for line in file:
-        # Если найдено начало блока location /, устанавливаем флаг
-        if line.strip() == "location / {":
-            add_location_admin = True
+        # If the line contains "listen [::]:443 ssl default_server;"
+        if line.strip() == "# listen [::]:443 ssl default_server;" or \
+           line.strip() == "listen [::]:443 ssl default_server;":
+            add_ssl_paths = True
 
-        # Печатаем текущую строку
+        # Print the current line
         print(line, end='')
 
-        # Если найдено закрытие блока location /, добавляем location /admin после него
-        if add_location_admin and line.strip() == "}":
-            print(new_location_block)
-            add_location_admin = False
+        # If a line with SSL configuration is found, add the paths to the certificate and key
+        if add_ssl_paths:
+            print(f"        ssl_certificate {certificate_path};")
+            print(f"        ssl_certificate_key {private_key_path};")
+            add_ssl_paths = False
 
-# После выполнения всех операций, перезапускаем Nginx
+# After completing all operations, restart Nginx
 os.system("sudo systemctl restart nginx")
+
