@@ -13,15 +13,20 @@ Before you begin, make sure you have the following installed:
 
 ## Getting Started
 
-Clone this repository:
+1.Clone this repository:
 
 ```bash
 git clone https://github.com/yourusername/terraform-docker-aws-deployment.git
 cd terraform-docker-aws-deployment
 ```
 
-Build the Docker container:
+2.Build the Docker container:
 
 ```bash
-git clone https://github.com/yourusername/terraform-docker-aws-deployment.git
-cd terraform-docker-aws-deployment
+docker build -t terraform-container1 .
+```
+3.Run the Docker container:
+
+```bash
+docker run -it terraform-container1
+```
