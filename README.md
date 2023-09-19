@@ -14,10 +14,6 @@ Before you begin, make sure you have the following installed:
 
 1.Clone this repository:
 
-```bash
-git clone https://github.com/yourusername/terraform-docker-aws-deployment.git](https://github.com/vlad2580/nginx_server.git
-```
-
 2.Build the Docker container:
 
 ```bash
