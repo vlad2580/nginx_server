@@ -13,7 +13,7 @@ Before you begin, make sure you have the following installed:
 
 ## Getting Started
 
-1. Clone this repository:
+Clone this repository:
 
    ```bash
    git clone https://github.com/yourusername/terraform-docker-aws-deployment.git
@@ -25,10 +25,10 @@ Build the Docker container:
 
 Run the Docker container:
 
-bash
-docker run -it terraform-container1
-Deployment Process
-Initialization and AWS Setup:
+   ```bash
+   docker run -it terraform-container1
+   Deployment Process
+   Initialization and AWS Setup:
 
 Terraform initializes and connects to your AWS account (for educational purposes).
 It creates and configures a security group.
