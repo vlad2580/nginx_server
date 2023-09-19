@@ -9,7 +9,6 @@ Before you begin, make sure you have the following installed:
 
 - Docker
 - Terraform
-- AWS CLI configured with your AWS credentials
 
 ## Getting Started
 
