@@ -32,7 +32,7 @@ data "aws_ami" "ubuntu" {
 #---------------------------------------------------#
 
 resource "aws_security_group" "webserver" {
-  name = "Dinamic-Security-Nginx-Group"
+  name = "Dinamic-Security-Nginx-Group-Main"
 
   dynamic "ingress" {
     for_each = ["80", "443", "1234"]
@@ -74,7 +74,7 @@ resource "aws_instance" "nginx_instance" {
   key_name      = "vlad-key-frankfurt"
   tags = {
 
-    Name = "ngnix_instance_1.0.0"
+    Name = "11ngnix_instance_1.0.0"
   }
   user_data       = file("user_data.sh")
   security_groups = [aws_security_group.webserver.name]
