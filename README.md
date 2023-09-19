@@ -20,10 +20,10 @@ Before you begin, make sure you have the following installed:
    cd terraform-docker-aws-deployment
 Build the Docker container:
 
-   ```bash
-   Copy code
+  ```bash
    docker build -t terraform-container1 .
-   Run the Docker container:
+
+Run the Docker container:
 
 bash
 docker run -it terraform-container1
