@@ -19,3 +19,8 @@ Clone this repository:
 git clone https://github.com/yourusername/terraform-docker-aws-deployment.git
 cd terraform-docker-aws-deployment
 
+Build the Docker container:
+
+```bash
+git clone https://github.com/yourusername/terraform-docker-aws-deployment.git
+cd terraform-docker-aws-deployment
