@@ -10,7 +10,7 @@ Before you begin, make sure you have the following installed:
 - Docker
 - AWS account (custom_aws_auth branch only)
 
-**To utilize your personal AWS account, please switch to the 'custom_aws_auth' branch. This version is solely intended for explanatory purposes and will be removed once it's shared publicly.**
+# To utilize your personal AWS account, please switch to the 'custom_aws_auth' branch. This version is solely intended for explanatory purposes and will be removed once it's shared publicly.
 
 ## Getting Started
 
