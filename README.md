@@ -28,32 +28,19 @@ Follow these steps to set up your AWS credentials and deploy resources:
    - Follow the prompts to enter the "Key Pair assigned at launch" (string) and the direct path to your `.pem` key file.
 
 5. **Build and Run the Container:**
-   - After configuring your AWS credentials and key, you can build and run the container by executing the following:
-     ```bash
-     docker build -t terraform-container .
-     docker run -it --rm -e AWS_KEY_PATH="/terraform/aws-key.pem" terraform-container
-     ```
 
-6. **Deploy Resources:**
-   - Once the container is running, you can use Terraform to deploy AWS resources as defined in your configuration files.
+   1.Clone this repository:
 
-7. **Additional Customization:**
-   - You can further customize your Terraform configuration to create the resources you need for your project.
+   2.Build the Docker container:
+   
+   ```bash
+   docker build -t terraform-container1 .
+   ```
+   3.Run the Docker container:
 
-## Getting Started
-
-1.Clone this repository:
-
-2.Build the Docker container:
-
-```bash
-docker build -t terraform-container1 .
-```
-3.Run the Docker container:
-
-```bash
-docker run -it terraform-container1
-```
+   ```bash
+   docker run -it terraform-container1
+   ```
 
 # Deployment Process
 ## Initialization and AWS Setup
