@@ -7,6 +7,7 @@ This repository contains a Terraform configuration and Docker setup for deployin
 
 Before you begin, make sure you have the following installed:
 - Docker Engine for built&run containers
+- AWS account (custom_aws_auth branch only)
 
 ### Branch custom_aws_auth update
 Follow these steps to set up your AWS credentials and deploy resources:
@@ -29,14 +30,12 @@ Follow these steps to set up your AWS credentials and deploy resources:
 
 5. **Build and Run the Container:**
 
-   1.Clone this repository:
-
-   2.Build the Docker container:
+   1.Build the Docker container:
    
    ```bash
    docker build -t terraform-container1 .
    ```
-   3.Run the Docker container:
+   2.Run the Docker container:
 
    ```bash
    docker run -it terraform-container1
