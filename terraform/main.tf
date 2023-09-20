@@ -6,6 +6,9 @@
 provider "aws" {
 }
 
+#---------------------------------------------------#
+# Look uo for a latest ubuntu version               #
+#---------------------------------------------------#
 
 data "aws_ami" "ubuntu" {
 
@@ -29,7 +32,7 @@ data "aws_ami" "ubuntu" {
 #---------------------------------------------------#
 
 resource "aws_security_group" "webserver" {
-  name = "Dinamic-Security-Nginx-Grsoup-Main2321"
+  name = "My New Group"
 
   dynamic "ingress" {
     for_each = ["80", "443", "1234"]
@@ -68,10 +71,10 @@ resource "aws_security_group" "webserver" {
 resource "aws_instance" "nginx_instance" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  key_name = "vlad-key-frankfurt"
+  key_name      = "vlad-key-frankfurt"
   tags = {
 
-    Name = "AuthUser_instance_1.0.0"
+    Name = "nginx_server"
   }
   user_data       = file("user_data.sh")
   security_groups = [aws_security_group.webserver.name]
