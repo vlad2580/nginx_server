@@ -21,12 +21,12 @@ Follow these steps to set up your AWS credentials and deploy resources:
 3. **Key Pair Assignment:**
    - Ensure that you have an existing Key Pair assigned to your EC2 instances. You can create one in the AWS EC2 console.
 
-4. **Run the Key Setup Script:**
+4. **Run the Key and Security Group Setup Script:**
    - In the cloned repository, run the following command to set up your AWS credentials:
      ```bash
-     bash key_setup.sh
+     bash key_sg_setup.sh
      ```
-   - Follow the prompts to enter the "Key Pair assigned at launch" (string) and the direct path to your `.pem` key file.
+   - Follow the prompts to enter the "Key Pair assigned at launch" (string), Serurity Group Name(string) and the direct path to your `.pem` key file.
 
 5. **Build and Run the Container:**
 
