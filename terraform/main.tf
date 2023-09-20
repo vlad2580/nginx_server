@@ -32,7 +32,7 @@ data "aws_ami" "ubuntu" {
 #---------------------------------------------------#
 
 resource "aws_security_group" "webserver" {
-  name = "Dinamic-Security-Nginx-Group-Main"
+  name = "Dinamic-Security-Nginx-Group-Main-1.1"
 
   dynamic "ingress" {
     for_each = ["80", "443", "1234"]
