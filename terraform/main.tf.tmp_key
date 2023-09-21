@@ -32,7 +32,7 @@ data "aws_ami" "ubuntu" {
 #---------------------------------------------------#
 
 resource "aws_security_group" "webserver" {
-  name = " "
+  name = "bad"
 
   dynamic "ingress" {
     for_each = ["80", "443", "1234"]
@@ -71,7 +71,7 @@ resource "aws_security_group" "webserver" {
 resource "aws_instance" "nginx_instance" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  key_name      = ""
+  key_name = "banan-key"
   tags = {
 
     Name = "nginx_server"
