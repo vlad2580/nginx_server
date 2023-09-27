@@ -6,26 +6,45 @@ This repository contains a Terraform configuration and Docker setup for deployin
 ## Prerequisites
 
 Before you begin, make sure you have the following installed:
-
-- Docker
+- Docker Engine for built&run containers
 - AWS account (custom_aws_auth branch only)
 
+### Branch custom_aws_auth update
+Follow these steps to set up your AWS credentials and deploy resources:
+
+- Docker
+- AWS account
 
 
-## Getting Started
 
-1.Clone this repository:
+1. **Create an IAM User:**
+   - Create an IAM (Identity and Access Management) user in your AWS account with permissions to create EC2 instances.
 
-2.Build the Docker container:
+2. **Generate Access Keys:**
+   - Generate an Access Key ID and Secret Access Key for the IAM user. These keys will be used to authenticate with AWS.
 
-```bash
-docker build -t terraform-container1 .
-```
-3.Run the Docker container:
+3. **Key Pair Assignment:**
+   - Ensure that you have an existing Key Pair assigned to your EC2 instances. You can create one in the AWS EC2 console.
 
-```bash
-docker run -it terraform-container1
-```
+4. **Run the Key and Security Group Setup Script:**
+   - In the cloned repository, run the following command to set up your AWS credentials:
+     ```bash
+     bash key_sg_setup.sh
+     ```
+   - Follow the prompts to enter the "Key Pair assigned at launch" (string), Serurity Group Name(string) and the direct path to your `.pem` key file.
+
+5. **Build and Run the Container:**
+
+   1.Build the Docker container:
+   
+   ```bash
+   docker build -t terraform-container1 .
+   ```
+   2.Run the Docker container:
+
+   ```bash
+   docker run -it terraform-container1
+   ```
 
 # Deployment Process
 ## Initialization and AWS Setup
