@@ -12,6 +12,11 @@ Before you begin, make sure you have the following installed:
 ### Branch custom_aws_auth update
 Follow these steps to set up your AWS credentials and deploy resources:
 
+- Docker
+- AWS account
+
+
+
 1. **Create an IAM User:**
    - Create an IAM (Identity and Access Management) user in your AWS account with permissions to create EC2 instances.
 
